@@ -36,9 +36,9 @@ class SpringTestController implements SpringTestAPI {
                 springTestService.generateRandomTestMessage("testPOST")
         );
 
-        model.addAttribute(Map.of(
-
-        ));
+        model.addAllAttributes(
+                springTestService.convertRequestToMap(requestBody)
+        );
 
         return "testPOST";
     }
